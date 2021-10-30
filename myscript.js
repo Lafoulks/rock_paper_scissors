@@ -1,28 +1,36 @@
-let choices = ['Rock', 'Paper', 'Scissors'];
+const choices = ['rock', 'paper', 'scissors'];
 
-function computerPlay(choices) {
-    return choices[Math.floor(Math.random() * choices.length)];
-}
+const computerSelection = choices[Math.floor(Math.random() * choices.length)];
 
-console.log(computerPlay(choices));
-
-const computerSelection = computerPlay(choices);
-const playerSelection = prompt ('What will you choose?', 'Rock, Paper, or Scissors?');
+console.log(computerSelection);
 
 function playRound(playerSelection, computerSelection) {
-    if ((computerSelection == 'Rock' && playerSelection == 'Rock') || 
-        (computerSelection == 'Scissors' && playerSelection == 'Scissors') ||
-        (computerSelection == 'Paper' && playerSelection == 'Paper')) {
+    if (playerSelection ==  computerSelection) {
             alert('It\'s a tie!');
-    }   else if ((computerSelection == 'Rock' && playerSelection == 'Scissors') || 
-        (computerSelection == 'Scissors' && playerSelection == 'Paper') ||
-        (computerSelection == 'Paper' && playerSelection == 'Rock')) {
-            alert('Oh no! You lost!');
-    }   else ((computerSelection == 'Rock' && playerSelection == 'Paper') || 
-        (computerSelection == 'Scissors' && playerSelection == 'Rock') ||
-        (computerSelection == 'Paper' && playerSelection == 'Scissors')); {
-            alert('You win!');
-    }
-    return (playRound(playerSelection, computerSelection));
-}
-    console.log(playRound(playerSelection, computerSelection));
+
+        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+            alert('You\'ve lost! Try again?');
+
+        } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+            alert('Congrats! You\'ve won.');
+
+        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+            alert('Congrats! You\'ve won.');
+
+        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+            alert('You\'ve lost! Try again?');
+
+        } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+            alert('You\'ve lost! Try again?');
+        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+            alert('Congrats! You\'ve won.');
+        } else {
+            alert('Oops! Something has gone wrong.')
+        }
+        return(playRound)
+    }  
+
+
+const playerSelection = prompt('What will you choose?', 'Rock, Paper, or Scissors?')
+playerSelection.toLowerCase();
+console.log(playRound(playerSelection, computerSelection));
