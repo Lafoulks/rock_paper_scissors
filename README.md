@@ -1,0 +1,1 @@
+A rock, paper, scissors game made using javascript. The user's score is kept track of against the computer, and at the end of five rounds, a winner is declared.

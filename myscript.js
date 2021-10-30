@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
             ++playerScore; 
 
         } else {
-            alert('Oops! Enter rock, paper, or scissors please.')
+            alert('Oops! Something went wrong.')
         }
         return(playRound)
     }  
