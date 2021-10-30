@@ -1,8 +1,8 @@
 const choices = ['rock', 'paper', 'scissors'];
-
-const computerSelection = choices[Math.floor(Math.random() * choices.length)];
-
+let computerSelection = choices[Math.floor(Math.random() * choices.length)];
 console.log(computerSelection);
+
+//Code below plays 1 round successfully
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection ==  computerSelection) {
@@ -30,7 +30,29 @@ function playRound(playerSelection, computerSelection) {
         return(playRound)
     }  
 
+playerSelection = prompt('What will you choose?', 'Rock, paper, or scissors?').toLowerCase();
 
-const playerSelection = prompt('What will you choose?', 'Rock, Paper, or Scissors?')
-playerSelection.toLowerCase();
-console.log(playRound(playerSelection, computerSelection));
+//Game() attempt
+
+function game() {
+ playRound(playerSelection, computerSelection)
+    console.log(computerSelection);
+    playerSelection = prompt('What will you choose?', 'Rock, paper, or scissors?').toLowerCase();
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
+playRound(playerSelection, computerSelection)
+    console.log(computerSelection);
+    playerSelection = prompt('What will you choose?', 'Rock, paper, or scissors?').toLowerCase();
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
+playRound(playerSelection, computerSelection)
+    console.log(computerSelection);
+    playerSelection = prompt('What will you choose?', 'Rock, paper, or scissors?').toLowerCase();
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
+playRound(playerSelection, computerSelection)
+    console.log(computerSelection);
+    playerSelection = prompt('What will you choose?', 'Rock, paper, or scissors?').toLowerCase();
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
+playRound(playerSelection, computerSelection)
+    console.log(computerSelection);
+ }
+
+game();
