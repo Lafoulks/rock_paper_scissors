@@ -65,9 +65,10 @@ playRound(playerSelection, computerSelection)
     console.log(computerSelection);
     if (playerScore > computerScore) {
         alert('Congratulations! You\'ve won!')
+    } else if (playerScore == computerScore) {
+        alert('It\'s a draw!')
     } else {
-        alert('Sorry, computer wins.')
+        alert('Sorry, you\'ve lost.')
     }
- }
-
+}
 game(); 
