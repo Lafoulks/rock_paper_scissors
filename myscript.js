@@ -6,7 +6,7 @@ const choices = ['rock', 'paper', 'scissors'];
 let computerSelection = choices[Math.floor(Math.random() * choices.length)];
 console.log(computerSelection);
 
-//This allows one round of the game with user input
+//This allows one round of the game with user input. 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection ==  computerSelection) {
             alert('It\'s a tie!');
@@ -36,14 +36,18 @@ function playRound(playerSelection, computerSelection) {
             ++playerScore; 
 
         } else {
-            alert('Oops! Something went wrong.')
+            alert('Please choose between rock, paper, or scissors.')
+            
         }
         return(playRound)
     }  
 
-playerSelection = prompt('What will you choose?', 'Rock, paper, or scissors?').toLowerCase();
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    alert('Hey it works!');
+});
 
-//This function repeats the game 5 times and alerts the user if they've won the 5 rounds or not
+/*This function repeats the game 5 times and alerts the user if they've won the 5 rounds or not
 function game() {
  playRound(playerSelection, computerSelection)
     console.log(computerSelection);
@@ -72,3 +76,4 @@ playRound(playerSelection, computerSelection)
     }
 }
 game(); 
+*/
