@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(42, 88, 173);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.button-container {
+    margin: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+
+#pScore, #cScore {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}

@@ -5,7 +5,7 @@ let computerScore = 0;
 //Initiating computer selectiom
 const choices = ['rock', 'paper', 'scissors'];
 
-//This allows one round of the game with user input. 
+//This determines whether the player or computer wins each round
 function playRound(playerSelection, computerSelection) {
     if (playerSelection ==  computerSelection) {
             alert('We\'ve tied...Try again?');
@@ -43,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 //Each button represents a player choice against the computer's random choice
+//TO DO: still need to get rid of round alerts and add that with a DOM method
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
   playerSelection = 'rock';
@@ -54,6 +55,11 @@ rock.addEventListener('click', () => {
   cScore.textContent = 'My score is: ' + computerScore;
   console.log(playerSelection);
   console.log(computerSelection);
+  if ((computerScore === 5 || playerScore === 5) && (computerScore < playerScore)) {
+    alert('Game Over! You win.')
+} else if ((computerScore === 5 || playerScore === 5) && (computerScore > playerScore)) {
+    alert('Game over! I win.')
+}
 });
 
 const paper = document.querySelector('#paper');
@@ -67,6 +73,11 @@ paper.addEventListener('click', () => {
   cScore.textContent = 'My score is: ' + computerScore;
   console.log(playerSelection);
   console.log(computerSelection);
+  if ((computerScore === 5 || playerScore === 5) && (computerScore < playerScore)) {
+    alert('Game Over! You win.')
+} else if ((computerScore === 5 || playerScore === 5) && (computerScore > playerScore)) {
+    alert('Game over! I win.')
+}
 });
 
 const scissors = document.querySelector('#scissors');
@@ -80,9 +91,14 @@ scissors.addEventListener('click', () => {
   cScore.textContent = 'My score is: ' + computerScore;
   console.log(playerSelection);
   console.log(computerSelection);
+  if ((computerScore === 5 || playerScore === 5) && (computerScore < playerScore)) {
+    alert('Game Over! You win.')
+} else if ((computerScore === 5 || playerScore === 5) && (computerScore > playerScore)) {
+    alert('Game over! I win.')
+}
 });
 
-// Each click must add a correspondig ponint to either the computer or player.
+//Declares scores
 
 div = document.getElementById('pScore');
 pScore.textContent = 'Your score is: ' + playerScore;
@@ -91,7 +107,7 @@ div = document.getElementById('cScore');
 cScore.textContent = 'My score is: ' + computerScore;
 
 
-/*This function repeats the game 5 times and alerts the user if they've won the 5 rounds or not
+/*Function used for previous version that repeats the game 5 times and alerts the user if they've won the 5 rounds or not
 function game() {
  playRound(playerSelection, computerSelection)
     console.log(computerSelection);
