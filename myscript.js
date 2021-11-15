@@ -3,17 +3,16 @@ let computerScore = 0;
 
 //Initiating computer selectiom
 const choices = ['rock', 'paper', 'scissors'];
-let computerSelection = choices[Math.floor(Math.random() * choices.length)];
-console.log(computerSelection);
+
 
 
 //This allows one round of the game with user input. 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection ==  computerSelection) {
-            alert('It\'s a tie!');
+            alert('We\'ve tied...Try again?');
 
         } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-            alert('A point for the computer!');
+            alert('A point for me!');
             ++computerScore;
 
         } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
@@ -25,11 +24,11 @@ function playRound(playerSelection, computerSelection) {
             ++playerScore; 
 
         } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-            alert('A point for the computer!');
+            alert('A point for me!');
             ++computerScore;
 
         } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-            alert('A point for the computer!');
+            alert('A point for me!');
             ++computerScore;
 
         } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
@@ -44,15 +43,14 @@ function playRound(playerSelection, computerSelection) {
     }  
 
 
-/*Buttons are responsive, but results don't match the computerChoice that is being console logged (log will say paper, I choose rock and it declares I've won)
-Console log is showing the correct output for player choice, but results don't match the logic in the playRound fucntion above
-*/
+//Each button represents a player choice against the computer's random choice
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
   playerSelection = 'rock';
   computerSelection = choices[Math.floor(Math.random() * choices.length)];
   playRound(playerSelection, computerSelection);
   console.log(playerSelection);
+  console.log(computerSelection);
 });
 
 const paper = document.querySelector('#paper');
@@ -61,6 +59,7 @@ paper.addEventListener('click', () => {
   computerSelection = choices[Math.floor(Math.random() * choices.length)];
   playRound(playerSelection, computerSelection);
   console.log(playerSelection);
+  console.log(computerSelection);
 });
 
 const scissors = document.querySelector('#scissors');
@@ -69,7 +68,17 @@ scissors.addEventListener('click', () => {
   computerSelection = choices[Math.floor(Math.random() * choices.length)];
   playRound(playerSelection, computerSelection);
   console.log(playerSelection);
+  console.log(computerSelection);
 });
+
+/* Each click must add a correspondig ponint to either the computer or player.
+*/
+
+div = document.getElementById('div1');
+div.textContent = 'Your score: ' + playerScore;
+
+div = document.getElementById('div2');
+div.textContent = 'My score: ' + computerScore;
 
 /*This function repeats the game 5 times and alerts the user if they've won the 5 rounds or not
 function game() {
