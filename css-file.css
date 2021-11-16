@@ -16,9 +16,22 @@ body {
     gap: 100px;
 }
 
+button {
+    padding: 20px;
+}
 
 #pScore, #cScore {
     display: flex;
     justify-content: center;
     align-self: center;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+#round {
+    font-size: 30px;
+    margin: 50px;
 }

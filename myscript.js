@@ -8,34 +8,34 @@ const choices = ['rock', 'paper', 'scissors'];
 //This determines whether the player or computer wins each round
 function playRound(playerSelection, computerSelection) {
     if (playerSelection ==  computerSelection) {
-            alert('We\'ve tied...Try again?');
+            round.textContent = "We\'ve tied...Try again?";
 
         } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-            alert('You chose rock and I chose paper. I win this round!');
+            round.textContent = 'You chose rock and I chose paper. I win this round!';
             ++computerScore;
 
         } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            alert('You chose rock and I chose scissors. You win this round!');
+            round.textContent = 'You chose rock and I chose scissors. You win this round!';
             ++playerScore; 
 
         } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-            alert('You chose paper and I chose rock. You win this round!');
+            round.textContent = 'You chose paper and I chose rock. You win this round!';
             ++playerScore; 
 
         } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-            alert('You chose paper and I chose scissors. I win this round!');
+            round.textContent = 'You chose paper and I chose scissors. I win this round!';
             ++computerScore;
 
         } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-            alert('You chose scissors and I chose rock. I win this round!');
+            round.textContent = 'You chose scissors and I chose rock. I win this round!';
             ++computerScore;
 
         } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-            alert('You chose scissors and I chose paper. You win this round!');
+            round.textContent = 'You chose scissors and I chose paper. You win this round!';
             ++playerScore; 
 
         } else {
-            alert('Please choose between rock, paper, or scissors.')
+            round.textContent = 'Please choose between rock, paper, or scissors.'
             
         }
         return(playRound)
@@ -56,9 +56,9 @@ rock.addEventListener('click', () => {
   console.log(playerSelection);
   console.log(computerSelection);
   if ((computerScore === 5 || playerScore === 5) && (computerScore < playerScore)) {
-    alert('Game Over! You win.')
+    round.textContent = 'Game Over! You win. Refresh the page; I demand a rematch!'
 } else if ((computerScore === 5 || playerScore === 5) && (computerScore > playerScore)) {
-    alert('Game over! I win.')
+    round.textContent = 'Game over! I win. Refresh the page if you dare play me again...'
 }
 });
 
@@ -74,9 +74,9 @@ paper.addEventListener('click', () => {
   console.log(playerSelection);
   console.log(computerSelection);
   if ((computerScore === 5 || playerScore === 5) && (computerScore < playerScore)) {
-    alert('Game Over! You win.')
+    round.textContent = 'Game Over! You win. Refresh the page; I demand a rematch!'
 } else if ((computerScore === 5 || playerScore === 5) && (computerScore > playerScore)) {
-    alert('Game over! I win.')
+    round.textContent = 'Game over! I win. Refresh the page if you dare play me again...'
 }
 });
 
@@ -92,20 +92,18 @@ scissors.addEventListener('click', () => {
   console.log(playerSelection);
   console.log(computerSelection);
   if ((computerScore === 5 || playerScore === 5) && (computerScore < playerScore)) {
-    alert('Game Over! You win.')
+    round.textContent = 'Game Over! You win. Refresh the page; I demand a rematch!'
 } else if ((computerScore === 5 || playerScore === 5) && (computerScore > playerScore)) {
-    alert('Game over! I win.')
+    round.textContent = 'Game over! I win. Refresh the page if you dare play me again...'
 }
 });
 
 //Declares scores
-
 div = document.getElementById('pScore');
 pScore.textContent = 'Your score is: ' + playerScore;
 
 div = document.getElementById('cScore');
 cScore.textContent = 'My score is: ' + computerScore;
-
 
 /*Function used for previous version that repeats the game 5 times and alerts the user if they've won the 5 rounds or not
 function game() {
